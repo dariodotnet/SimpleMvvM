@@ -20,14 +20,4 @@ namespace SimpleMvvM.Core
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
     }
-
-    public class ViewModelBase : BindableBase
-    {
-        private bool _isBusy;
-        public bool IsBusy
-        {
-            get => _isBusy;
-            set => SetProperty(ref _isBusy, value);
-        }
-    }
 }
