@@ -1,15 +1,19 @@
-﻿<base:PageBase x:Class="SimpleMvvM.UWP.Sample.Views.MainView"
+﻿<mvvM:PageBase x:Class="SimpleMvvM.UWP.Sample.Views.SecondView"
                xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-               xmlns:base="using:SimpleMvvM.UWP.MvvM"
                xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
                xmlns:local="using:SimpleMvvM.UWP.Sample.ViewModels"
                xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+               xmlns:mvvM="using:SimpleMvvM.UWP.MvvM"
                mc:Ignorable="d">
-    <base:PageBase.DataContext>
-        <local:MainViewModel />
-    </base:PageBase.DataContext>
+    <mvvM:PageBase.DataContext>
+        <local:SecondViewModel />
+    </mvvM:PageBase.DataContext>
+
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <Button Command="{Binding TestNavigationCommand}" Content="test" />
+        <TextBlock HorizontalAlignment="Center"
+                   VerticalAlignment="Center"
+                   Text="{Binding Title}" />
     </Grid>
-</base:PageBase>
+</mvvM:PageBase>
+

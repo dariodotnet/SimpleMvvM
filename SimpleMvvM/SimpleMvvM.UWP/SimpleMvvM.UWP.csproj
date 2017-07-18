@@ -107,10 +107,9 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="MvvM\PageBase.cs" />
-    <Compile Include="Navigation\Navigation.cs" />
-    <Compile Include="SimpleMvvMApp.cs" />
     <Compile Include="MvvM\ViewModelBase.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SimpleApp.cs" />
     <EmbeddedResource Include="Properties\SimpleMvvM.UWP.rd.xml" />
   </ItemGroup>
   <ItemGroup>

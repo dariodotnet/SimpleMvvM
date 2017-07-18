@@ -2,9 +2,9 @@
 
 namespace SimpleMvvM.UWP.Sample.Views
 {
-    public sealed partial class MainView : PageBase
+    public sealed partial class SecondView : PageBase
     {
-        public MainView()
+        public SecondView()
         {
             InitializeComponent();
         }
