@@ -7,6 +7,10 @@ namespace SimpleMvvM.UWP.MvvM
 {
     public abstract class ViewModelBase : BindableBase
     {
+        public Frame AppFrame { get; private set; }
+
+        #region Bindable properties
+
         private bool _isBusy;
         public bool IsBusy
         {
@@ -21,10 +25,10 @@ namespace SimpleMvvM.UWP.MvvM
             set => SetProperty(ref _title, value);
         }
 
+        #endregion
+
         public abstract Task OnNavigatedFrom(NavigationEventArgs e);
         public abstract Task OnNavigatedTo(NavigationEventArgs e);
-
-        public Frame AppFrame { get; private set; }
 
         internal void SetAppFrame(Frame viewFrame)
         {
@@ -34,7 +38,7 @@ namespace SimpleMvvM.UWP.MvvM
         public bool ShowViewModel<T>(object parameters = null) where T : ViewModelBase
         {
             var view = SimpleApp.Resolve(typeof(T));
-            return AppFrame.Navigate(view, parameters);
+            return view != null && AppFrame.Navigate(view, parameters);
         }
     }
 }

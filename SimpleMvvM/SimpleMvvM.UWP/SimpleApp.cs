@@ -14,7 +14,14 @@ namespace SimpleMvvM.UWP
 
         public static Type Resolve(Type viewModel)
         {
-            return ViewsFactory[viewModel];
+            try
+            {
+                return ViewsFactory[viewModel];
+            }
+            catch (Exception exception)
+            {
+                throw new ArgumentNullException(nameof(viewModel), exception.Message);
+            }
         }
     }
 }
